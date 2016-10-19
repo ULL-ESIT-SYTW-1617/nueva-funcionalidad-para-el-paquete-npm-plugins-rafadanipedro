@@ -1,6 +1,6 @@
 {
   "name": "plugin-iaas-rafadanipedro",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Plugin para desplegar practica en el servidor del IAAS usando el paquete gitbook-start-rafadanipedro",
   "repository": {
     "type": "git",
@@ -11,14 +11,14 @@
   "bugs": {
     "url": "https://github.com/ULL-ESIT-SYTW-1617/nueva-funcionalidad-para-el-paquete-npm-plugins-rafadanipedro/issues"
   },
-  "engines" : {
-    "node" : "6.7.0",
+  "engines": {
+    "node": "6.7.0",
     "npm": "3.10.3"
   },
   "homepage": "https://github.com/ULL-ESIT-SYTW-1617/nueva-funcionalidad-para-el-paquete-npm-plugins-rafadanipedro#readme",
   "devDependencies": {
-  "fs-promise": "0.5.0",
-  "gulp": "gulpjs/gulp#4.0",
-  "gulp-ssh": "^0.6.0"
+    "fs-promise": "0.5.0",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-ssh": "^0.6.0"
   }
 }
