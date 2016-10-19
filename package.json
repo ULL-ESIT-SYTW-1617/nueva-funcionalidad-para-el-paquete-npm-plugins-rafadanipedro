@@ -1,27 +1,22 @@
 {
-  "name": "prct03",
-  "version": "1.0.0",
-  "description": "Aplicación express para escuchar el webhook de Github y crear un Gitbook",
-  "main": "bin/www",
-  "scripts": {
-    "start": "node bin/www",
-    "dev": "nodemon --ignore gitbook bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "plugin-iaas-rafadanipedro",
+  "version": "0.0.1",
+  "description": "Plugin para desplegar practica en el servidor del IAAS usando el paquete gitbook-start-rafadanipedro"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-rafadanipedro.git"
+    "url": "git+https://github.com/ULL-ESIT-SYTW-1617/nueva-funcionalidad-para-el-paquete-npm-plugins-rafadanipedro.git"
   },
   "author": "rafadanipedro",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-rafadanipedro/issues"
+    "url": "https://github.com/ULL-ESIT-SYTW-1617/nueva-funcionalidad-para-el-paquete-npm-plugins-rafadanipedro/issues"
   },
   "engines" : {
     "node" : "6.7.0",
     "npm": "3.10.3"
   },
-  "homepage": "https://github.com/ULL-ESIT-SYTW-1617/practica-despliegues-en-iaas-y-heroku-rafadanipedro#readme",
+  "homepage": "https://github.com/ULL-ESIT-SYTW-1617/nueva-funcionalidad-para-el-paquete-npm-plugins-rafadanipedro#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "child-process-promise": "^2.1.3",
