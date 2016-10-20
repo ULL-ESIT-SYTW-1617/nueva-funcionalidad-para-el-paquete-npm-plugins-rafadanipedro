@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.config = config;
 exports.deploy = deploy;
 
 var _gulp = require('gulp');
@@ -30,8 +31,7 @@ var usuario = "usuario";
 var config = {
   host: dir_maq,
   port: 22,
-  username: usuario,
-  privateKey: _fsPromise2.default.readFileSync(process.env.HOME + '/.ssh/id_rsa')
+  username: usuario
 };
 
 var gulpSSH = new _gulpSsh2.default({
@@ -39,10 +39,30 @@ var gulpSSH = new _gulpSsh2.default({
   sshConfig: config
 });
 
-function deploy(args) {
-  return gulpSSH.shell(['cd ' + ruta, 'git pull']);
+function config() {
+  return config;
+}
 
-  return through.obj(function (file, encoding, callback) {
-    callback(null, doSomethingWithTheFile(file));
+function deploy(args) {
+  //config = args;
+
+  if (!config.host) {
+    //pide la ip por teclado
+  }
+
+  if (!config.username) {
+    //pide el usuario por teclado
+  }
+
+  _gulpPrompt2.default.prompt({
+    type: 'password',
+    name: 'pass',
+    message: 'Please enter your password'
+  }, function (res) {
+    _gulpPrompt2.default.confirm('Are you ready for Gulp?');
+    //value is in res.pass
   });
+
+  //return gulpSSH
+  //  .shell(['cd ' + ruta, 'git pull'])
 }
