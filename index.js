@@ -60,7 +60,7 @@ var deploy = exports.deploy = function () {
               ignoreErrors: false,
               sshConfig: config
             });
-            return _context.abrupt('return', gulpSSH.shell(['cd ' + ruta, 'git pull'], { filePath: 'shell.log' }).pipe(_gulp2.default.dest('logs')).on('end', function () {
+            return _context.abrupt('return', gulpSSH.shell(['cd ' + config.host, 'git pull'], { filePath: 'shell.log' }).pipe(_gulp2.default.dest('logs')).on('end', function () {
               exports.config = config = null;console.log(_fsPromise2.default.readFileSync('./logs/shell.log').toString());
             }));
 
@@ -103,16 +103,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-var ruta = "/home/usuario/Practica4/gh-pages";
-var dir_maq = "10.6.128.185";
-var usuario = "usuario";
-
-var config = {
-  host: dir_maq,
-  port: 22,
-  username: usuario,
-  path: ruta
-};
+var config = JSON.parse(_fsPromise2.default.readFileSync('./config.json').toString());
 
 _prompt2.default.start();
 
