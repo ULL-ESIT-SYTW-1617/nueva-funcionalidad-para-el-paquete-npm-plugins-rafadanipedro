@@ -1,6 +1,7 @@
 import gulp from 'gulp'
 import GulpSSH from 'gulp-ssh'
 import fs from 'fs-promise'
+import prompt from 'gulp-prompt'
 
 let ruta = "/home/usuario/Practica4/gh-pages"
 let dir_maq = "10.6.128.185"
@@ -18,15 +19,11 @@ var gulpSSH = new GulpSSH({
   sshConfig: config
 })
 
-export default function deploy(args) {
+export function deploy(args) {
   return gulpSSH
     .shell(['cd ' + ruta, 'git pull'])
 
   return through.obj(function(file, encoding, callback) {
     callback(null, doSomethingWithTheFile(file));
   });
-}
-
-function doSomethingWithTheFile(file) {
-  console.log(file.path)
 }

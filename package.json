@@ -16,9 +16,15 @@
     "npm": "3.10.3"
   },
   "homepage": "https://github.com/ULL-ESIT-SYTW-1617/nueva-funcionalidad-para-el-paquete-npm-plugins-rafadanipedro#readme",
-  "devDependencies": {
+  "dependencies": {
     "fs-promise": "0.5.0",
     "gulp": "gulpjs/gulp#4.0",
+    "gulp-prompt": "^0.2.0",
     "gulp-ssh": "^0.6.0"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0"
   }
 }
