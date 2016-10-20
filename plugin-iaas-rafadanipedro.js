@@ -18,7 +18,15 @@ var gulpSSH = new GulpSSH({
   sshConfig: config
 })
 
-export default function deployIaas() {
+export default function deploy(args) {
   return gulpSSH
     .shell(['cd ' + ruta, 'git pull'])
+
+  return through.obj(function(file, encoding, callback) {
+    callback(null, doSomethingWithTheFile(file));
+  });
+}
+
+function doSomethingWithTheFile(file) {
+  console.log(file.path)
 }
