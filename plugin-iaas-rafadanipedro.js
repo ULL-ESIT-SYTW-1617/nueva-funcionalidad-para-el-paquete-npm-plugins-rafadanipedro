@@ -4,16 +4,7 @@ import fs from 'fs-promise'
 import prompt from 'prompt'
 import tutu from 'gulp-debug'
 
-let ruta = "/home/usuario/Practica4/gh-pages"
-let dir_maq = "10.6.128.185"
-let usuario = "usuario"
-
-var config = {
-  host: dir_maq,
-  port: 22,
-  username: usuario,
-  path: ruta
-}
+let config = JSON.parse(fs.readFileSync('./config.json').toString())
 
 prompt.start();
 
@@ -57,7 +48,7 @@ export async function deploy(args = {}) {
   })
 
   return gulpSSH
-    .shell(['cd ' + ruta, 'git pull'], {filePath: 'shell.log'})
+    .shell(['cd ' + config.host, 'git pull'], {filePath: 'shell.log'})
     .pipe(gulp.dest('logs'))
     .on('end', function(){config = null; console.log(fs.readFileSync('./logs/shell.log').toString())})
 
