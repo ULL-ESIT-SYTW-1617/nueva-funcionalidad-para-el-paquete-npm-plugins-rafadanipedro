@@ -12,6 +12,7 @@ Las opciones disponibles son:
 * `--host: indica la dirección de la máquina`
 * `--path: indica la ruta del directorio donde se * encuentran las gh-pages del libro`
 * `--username: indica el usuario con el que nos conectaremos a la máquina`
+
 Si no introducimos ninguno de estos argumentos, ese se pedirá por pantalla. La contraseña del usuario del usuario del servidor se pedirá siempre por pantalla a la hora de realizar la conexión.
 
 ## Enlace al paquete en npm
